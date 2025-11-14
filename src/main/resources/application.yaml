@@ -9,11 +9,9 @@ spring:
       server:
         webflux:
           routes:
-            - id: ${CONTENT_SERVICE_ID:user-service}
-              uri: ${CONTENT_SERVICE_URI:http://localhost:8081}
+            - id: ${CONTENT_SERVICE_ID:content-service}
+              uri: ${CONTENT_SERVICE_URI:http://localhost:8093}
               predicates:
-                - Path=/api/v1/articles/**
-                - Path=/api/v1/sections/**
-                - Path=/api/v1/tags/**
+                - Path=/api/v1/articles/**,Path=/api/v1/sections/**,Path=/api/v1/tags/**
               filters:
                 - RateLimit

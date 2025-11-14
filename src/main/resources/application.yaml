@@ -16,4 +16,4 @@ spring:
                 - Path=/api/v1/sections/**
                 - Path=/api/v1/tags/**
               filters:
-                - RateLimitFilter
+                - RateLimit

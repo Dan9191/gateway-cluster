@@ -13,5 +13,5 @@ spring:
               uri: ${CONTENT_SERVICE_URI:http://localhost:8093}
               predicates:
                 - Path=/api/v1/articles/**,Path=/api/v1/sections/**,Path=/api/v1/tags/**
-              filters:
-                - RateLimit
+#              filters:
+#                - RateLimit

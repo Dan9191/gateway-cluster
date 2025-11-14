@@ -1,0 +1,19 @@
+server:
+  port: ${SERVER_PORT:8098}
+
+spring:
+  application:
+    name: gateway-kl
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: ${CONTENT_SERVICE_ID:user-service}
+              uri: ${CONTENT_SERVICE_URI:http://localhost:8081}
+              predicates:
+                - Path=/api/v1/articles/**
+                - Path=/api/v1/sections/**
+                - Path=/api/v1/tags/**
+              filters:
+                - RateLimitFilter
